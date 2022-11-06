@@ -13,5 +13,14 @@ export class AppComponent {
   changeTitle(newTitle: string): void {
     this.title = newTitle;
   }
+
+  addName(formParam: NgForm): void {
+    let newName: string = formParam.form.value.name;
+    this.names.push(newName);
+  }
+
+  removeName(i: number): void {
+    this.names.splice(i, 1);
+  }
 }
 

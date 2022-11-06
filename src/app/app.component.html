@@ -3,4 +3,13 @@
 <div *ngFor="let name of names; index as i">
   <p>{{i + 1}} {{name}}</p>
   <button (click)="changeTitle(name)">Change Greeting</button>
+  <button (click)="removeName(i)">Remove Name</button>
 </div>
+
+<hr>
+
+<form #nameForm="ngForm" (ngSubmit)="addName(nameForm)">
+  <label for="name">Enter a name! </label>
+  <input name="name" id="name" ngModel />
+  <button>Add to Names</button>
+</form>
